@@ -5,4 +5,4 @@ BattleC é basicamente uma batalha de RPG de mesa dentro do seu computador. Cada
 - Para uma melhor experiência de jogo, altere a configuração de inicialização do Terminal (app) para "Host de Console do Windows". Para jogar basta executar o Server.exe, e em seguida executar o Cliente.exe duas vezes (duas janelas do terminal).
 - Para jogar basta executar o Server.exe, e em seguida executar o Cliente.exe duas vezes (duas janelas do terminal).
 
-- Alunos: Vinicius Dumont, Guilherme Sousa da Silva, João Emmanuel Nadur Ariza
+- ESOFT4S-D Alunos: Vinicius Dumont, Guilherme Sousa da Silva, João Emmanuel Nadur Ariza 
