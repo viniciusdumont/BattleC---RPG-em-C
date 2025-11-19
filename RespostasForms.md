@@ -1,4 +1,5 @@
 Respostas do Formulário:
+ESOFT4S-D Alunos: Vinicius Dumont, Guilherme Sousa da Silva, João Emmanuel Nadur Ariza
 
 QUAL O NOME DO SEU JOGO?
 
@@ -19,3 +20,4 @@ COMO É FEITO O GERENCIAMENTO DA EXCLUSÃO MÚTUA?
 
 
 - O gerenciamento da exclusão mútua é uma função crítica do processo servidor, implementada utilizando a biblioteca pthreads.h. Como o servidor dispara uma thread dedicada para cada jogador, e ambas as threads precisam acessar e modificar o mesmo conjunto de variáveis globais que definem o estado do jogo (especificamente, as estruturas jogador1, jogador2 e a variável vez_do_jogador), a proteção é essencial para evitar condições de corrida.  Para isso, uma trava global do tipo pthread_mutex_t é inicializada. Em qualquer seção crítica do código (por exemplo, quando um jogador ataca, defende ou quando o servidor precisa ler o HP do oponente para calcular o dano) a thread ativa deve primeiro adquirir a trava usando pthread_mutex_lock(). Somente após obter o bloqueio, ela pode ler ou modificar as variáveis globais com segurança. Ao concluir a operação, a thread libera a trava imediatamente com pthread_mutex_unlock(), permitindo que a outra thread (do outro jogador) possa executar sua própria seção crítica. Esse mecanismo garante que as ações do jogo sejam atômicas e que a lógica de turnos seja respeitada, impedindo que os dois jogadores modifiquem o estado do jogo simultaneamente.
+
